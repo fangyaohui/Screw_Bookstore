@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fang{
+            font-family: 楷体;
+            /*font-size: 23px;*/
+            text-align: center;
+        }
+        .fang td{
+            width: 80px;
+        }
+        b{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">请在下面表格中输入学生的相关信息</h1>
+    <form action="demo1.php" method="post">
+        <table border="1" align="center" class="fang">
+            <tr>
+                <td>学生<b>*</b></td>
+                <td><input name="id" type="text"></td>
+            </tr>
+            <tr>
+                <td>姓名<b>*</b></td>
+                <td><input name="name" type="text"></td>
+            </tr>
+            <tr>
+                <td>性别<b>*</b></td>
+                <td><input name="sex" type="text"></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td><input name="age" type="text"></td>
+            </tr>
+            <tr>
+                <td>专业</td>
+                <td><input name="department" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a href="students.php">主页</a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

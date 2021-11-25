@@ -1,0 +1,199 @@
+.infor, .inforLeftNav {
+    padding-top: 80px;
+}
+.layout {
+    width: 934px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 1px;
+}
+.inforLeft {
+    width: 202px;
+    padding-top: 20px;
+    height: 400px;
+}
+.fl {
+    float: left;
+}
+.inforLeftNav {
+    /* background: #faf9f7; */
+    color: #000;
+    margin-bottom: 40px;
+}
+.infor, .inforLeftNav {
+    padding-top: 20px;
+}
+.infor .headImg {
+    background: url("../images/infor/inforHead.png") center top no-repeat;
+    text-align: center;
+    height: 100px;
+}
+.headImg img {
+    width: 100px;
+    height: 100px;
+}
+.infor .inforLeftNav p {
+    text-align: center;
+}
+.infor .account {
+    font-size: 18px;
+    margin: 13px 0 0;
+}
+.infor .inforLeftNav p {
+    text-align: center;
+}
+.infor .balance {
+    color: #ec771b;
+    height: 40px;
+    line-height: 40px;
+}
+.infor .inforLeftNav ul {
+    background: #efede9;
+}
+.infor .inforLeftNav li {
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    padding-left: -10px;
+}
+.infor .inforLeftNav li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: 16px;
+}
+.layout_h1 {
+    border-bottom: 2px solid #ee7700;
+    margin-bottom: 15px;
+}
+.infor .inforRight {
+    padding-top: 20px;
+}
+.inforRight {
+    width: 610px;
+    height: 400px;
+    /*background: red;*/
+}
+.fr {
+    float: right;
+}
+.layout_h1 {
+    border-bottom: 2px solid #ee7700;
+    margin-bottom: 15px;
+}
+.myBooks .inforRight .tabHead {
+    font-size: 18px;
+    color: #999;
+    margin-left: 0px;
+}
+.infor .layout_h1 h1, .myBooks .inforRight .tabHead {
+    height: 37px;
+    line-height: 35px;
+    padding-left: 4px;
+    color: #ec771b;
+}
+.myBooks .tabHead span {
+    width: 74px;
+    margin-left: 0px;
+}
+.myBooks .checkd {
+    color: #ec771b;
+    border-bottom: none;
+}
+.tabHead span, .tabHead a {
+    text-align: center;
+    margin-left: 20px;
+    float: left;
+    cursor: pointer;
+}
+.myBooks .tabHead em {
+    margin: 0 17px;
+    color: #333;
+}
+.fl {
+    float: left;
+}
+.myBooks .tabHead span {
+    width: 74px;
+    margin-left: 0px;
+}
+.tabHead span, .tabHead a {
+    text-align: center;
+    margin-left: 20px;
+    float: left;
+    cursor: pointer;
+}
+.noBuyBook {
+    margin-bottom: 30px;
+}
+.dis {
+    display: block!important;
+}
+.myBooks p.nobuyPro {
+    font-size: 36px;
+    text-align: center;
+    height: 166px;
+    line-height: 166px;
+}
+.myBooks .service {
+    margin-top: 10px;
+}
+.infor .service {
+    background: #f7f7f7;
+    margin: 70px 0 100px;
+    color: #666;
+}
+.infor .kfTitle {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #999;
+    padding-left: 15px;
+    border-bottom: 1px solid #fff;
+}
+.infor .service .kfBox {
+    padding-top: 18px;
+    width: 266px;
+    height: 82px;
+}
+.infor .kfemail {
+    margin-left: 30px;
+}
+.infor .kfphone {
+    margin-left: 50px;
+}
+.infor .kfphone p, .infor .kfemail p {
+    line-height: 24px;
+}
+strong {
+    font-weight: bold;
+}
+.infor .kfphone p, .infor .kfemail p {
+    line-height: 24px;
+}
+.infor .kfphone p, .infor .kfemail p {
+    line-height: 24px;
+}
+.infor .kfTime {
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

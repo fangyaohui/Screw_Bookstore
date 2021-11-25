@@ -1,0 +1,151 @@
+.content1 {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.rankTitle {
+    padding: 48px 0 36px 0;
+}
+.rankTitle h2 {
+    height: 40px;
+    font-size: 26px;
+    color: #212121;
+    margin: 0 auto;
+    text-align: center;
+}
+.rankTitle p {
+    width: 94px;
+    height: 12px;
+    line-height: 12px;
+    margin: 0 auto;
+    text-align: center;
+}
+.rankTitle p .lineL {
+    float: left;
+    width: 21px;
+    height: 1px;
+    background: #9e9e9e;
+}
+.rankTitle p .lineR {
+    float: right;
+    width: 21px;
+    height: 1px;
+    background: #9e9e9e;
+}
+.RankCon {
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    width: 1000px;
+    height: 650px;
+    background: #fff;
+    margin: 0 auto;
+}
+.KindsRank {
+    float: left;
+    width: 309px;
+    height: 560px;
+    padding: 38px 0 0 24px;
+}
+.KindsRankCenter {
+    width: 307px;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+}
+.KindsRank h3 {
+    height: 32px;
+    font-size: 18px;
+}
+.KindsRank h3 span {
+    width: 4px;
+    height: 20px;
+    border-radius: 50px;
+    background: #03a9f4;
+    float: left;
+    margin-right: 10px;
+}
+h3 a {
+    color: #212121;
+}
+.KindsRank ul {
+    overflow: hidden;
+}
+.KindsRank ul li {
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    outline: none;
+    font-family: "Microsoft Yahei", arial,sans-serif;
+    color: #9e9e9e;
+}
+a:link{
+    color: #9e9e9e;
+}
+a:visited{
+    color: #9e9e9e;
+}
+a:hover{
+    color: #53e3a6;
+}
+a:active{
+    color: red;
+}
+.KindsRank .close dt {
+    height: 32px;
+    line-height: 32px;
+}
+.KindsRank .close dd {
+    width: 262px;
+    height: 32px;
+    line-height: 32px;
+}
+.KindsRank .close dd i {
+    float: left;
+    width: 196px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+}
+.KindsRank .close dd span {
+    float: left;
+    font-family: arial;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.KindsRank .close dd span s {
+    margin-top: 12px;
+    float: left;
+}
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.KindsRank dl dt {
+    float: left;
+    width: 5px;
+    text-align: right;
+    margin-right: 1px;
+    /*background: red;*/
+    font-size: 16px;
+}
+.KindsRank dl dd {
+    /*width: 262px;*/
+    border-bottom: 1px solid #f0f0f0;
+    overflow: hidden;
+    margin-left: 20px;
+    /*background: black;*/
+}
+
+
+
+
+
+
+
+
+
