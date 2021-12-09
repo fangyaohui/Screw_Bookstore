@@ -124,7 +124,7 @@ a:active{
 }
 .difgenre ul .current a {
     background: #9e9e9e;
-    border-radius: 50px;
+    border-radius: 40px;
     color: #fff;
     border: 1px solid #9e9e9e;
     line-height: 18px;
@@ -146,8 +146,8 @@ a:active{
 }
 .difgenre1 .right1 {
     float: left;
-    width: 848px;
-    height: 160px;
+    width: 858px;
+    height: 172px;
     /*background: black;*/
     padding: 0 0 0 6px;
     border-bottom: 1px solid #f0f0f0;
@@ -170,7 +170,7 @@ a:active{
 }
 .difgenre1 ul .current a {
     background: #9e9e9e;
-    border-radius: 50px;
+    border-radius: 40px;
     color: #fff;
     border: 1px solid #9e9e9e;
     line-height: 18px;

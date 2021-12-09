@@ -2,6 +2,7 @@
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
+    height: auto;
 }
 .rankTitle {
     padding: 48px 0 36px 0;
@@ -37,7 +38,7 @@
     align-content: center;
     text-align: center;
     width: 1000px;
-    height: 650px;
+    height: 1785px;
     background: #fff;
     margin: 0 auto;
 }
@@ -107,6 +108,9 @@ a:active{
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 16px;
+}
+.KindsRank .close dd i a{
+    font-family: 楷体;
 }
 .KindsRank .close dd span {
     float: left;

@@ -55,6 +55,7 @@
     line-height: 52px;
     text-align: center;
     padding-left: -10px;
+    display: inline;
 }
 .infor .inforLeftNav li a {
     display: inline-block;
@@ -178,7 +179,9 @@ strong {
 .infor .kfTime {
     font-size: 12px;
 }
-
+.tabListBox1 li{
+    display: inline;
+}
 
 
 

@@ -51,7 +51,7 @@
 }
 .show{
     width: 1000px;
-    height: 526px;
+    height: auto;
     background: #ffffff;
     position: relative;
 }
@@ -474,6 +474,7 @@ p {
     width:597px;
     overflow:hidden;
     zoom:1;
+    height: auto;
     /*border:1px solid #ccc;*/
     /*float: left;*/
     /*width: 358px;*/
@@ -517,7 +518,7 @@ li {
 }
 .show {
     width: 1000px;
-    height: 556px;
+    height: auto;
     background: #FFF;
     position: relative;
 }
@@ -683,8 +684,14 @@ a {
     height: 18px;
     font-size: 12px;
 }
-
-
+.show .showLeft .bookCover {
+    width: 156px;
+    height: 208px;
+}
+.show .showLeft img {
+    position: absolute;
+    z-index: 1;
+}
 /*a {*/
 /*    text-decoration: none;*/
 /*    outline: none;*/

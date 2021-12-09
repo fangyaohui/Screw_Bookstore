@@ -91,9 +91,13 @@ class Db
     }
 
 //    获取自增长ID的方法
-    public function insert_id()
+    public function insert_id($table,$id)
     {
-        return mysqli_insert_id(self::$link);
+        $sql = "select MAX({$id}) from ".$table;
+        $res = self::read_one($sql);
+        $num = $res["MAX({$id})"] + 1;
+        return $num;
+//        return mysqli_insert_id(self::$link);
     }
 
 //    读取操作，一条记录

@@ -37,3 +37,6 @@ function sendmailcaptcha(){
 function find_password_submit(){
     window.location = "../php/Find_password.php";
 }
+function purchase(){
+
+}

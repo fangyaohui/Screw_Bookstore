@@ -78,11 +78,14 @@ function password($password, $salt)
 function captcha_check($code)
 {
     $captcha = get_captcha()['captcha'];
-    if (!empty($captcha)) {
-        unset($_SESSION['fyh']['captcha']);               // 清除验证码，防止重复验证
-        return strtoupper($captcha) == strtoupper($code); // 不区分大小写
-    }
+    if(strtoupper($captcha) == strtoupper($code))
+        return true;
     return false;
+//    if (!empty($captcha)) {         // 清除验证码，防止重复验证
+//        if()
+//        return strtoupper($captcha) == strtoupper($code); // 不区分大小写
+//    }
+//    return false;
 }
 /**
  * 重定向并停止脚本
@@ -96,6 +99,13 @@ function redirect($url)
 function alert($name,$url){
 //    $res = "<script language=\"JavaScript\">alert(\"你好\");</script>";
     $res = "<script language=\"JavaScript\">;alert(\"".$name."\");location.href=\"".$url."\";</script>";
+    return $res;
+}
+function del_shopping_book($bookid,$u_id){
+    require_once 'common/library/Db.php';
+    $db = Db::getInstance();
+    $sql = "DELETE FROM `shopping` WHERE `u_id`={$u_id} and `b_id`={$bookid};";
+    $res = $db->write($sql);
     return $res;
 }
 ?>

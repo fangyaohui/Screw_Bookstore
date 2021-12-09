@@ -1,0 +1,154 @@
+.conLayout {
+    padding-top: 22px;
+    font-family: "楷体";
+    width: 1000px;
+    margin: 0 auto;
+    height: auto;
+}
+.rConlNav .conLeft {
+    width: 1000px;
+}
+.conLeft {
+    width: 1000px;
+    /*margin-left: 0;*/
+    /*display: inline;*/
+}
+.fl {
+    float: left;
+}
+.layout_h1 {
+    border-bottom: 2px solid #ee7700;
+    margin-bottom: 15px;
+}
+h1 {
+    color: #383b43;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+}
+.rConlNav .sBookName {
+    color: #d88049;
+    margin: 0 5px;
+}
+.search .conLeft .sResult li {
+    border-bottom: 1px dotted #ccc;
+    padding: 28px 1px 16px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.cf, .layout {
+    *zoom: 1;
+}
+.cover {
+    padding: 6px 10px 15px 11px;
+    display: inline-block;
+}
+.w_104 {
+    width: 104px;
+}
+.w_104 img {
+    width: 104px;
+    height: 138px;
+    box-shadow: 0px 2px 8px #cccccc;
+}
+.search .conLeft .sResult .bookMess {
+    width: 100%;
+}
+.rConlNav .bookMess {
+    margin-left: 0;
+}
+.bookMess {
+    margin-left: 8px;
+}
+.bookMess a {
+    color: #333;
+}
+.search .conLeft .bookMess h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.rConlNav .bookMess h3 {
+    margin-bottom: 10px;
+}
+.bookMess h3 {
+    font-weight: normal;
+    line-height: 18px;
+    font-size: 14px;
+}
+.search p.author {
+    line-height: 26px;
+    margin-bottom: 8px;
+}
+.rConlNav .bookMess p {
+    margin: 0;
+}
+.bookMess p {
+    margin-top: 5px;
+    color: #999;
+    font-size: 16px;
+    font-family: 楷体;
+}
+.search .conLeft var {
+    margin-left: 36px;
+}
+.bookMess var {
+    color: #000;
+    margin-top: 5px;
+}
+.bookMess strong {
+    font-weight: bold;
+}
+.search p.brief {
+    color: #666;
+    line-height: 20px;
+    margin-top: 20px;
+    height: 60px;
+    overflow: hidden;
+    font-family: 楷体;
+    font-size: 16px;
+}
+.page {
+    margin: 22px 0 15px 0;
+}
+.page {
+    text-align: center;
+    margin: 32px 0 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.page a, .page span {
+    color: #999;
+    display: inline-block;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    font-family: 楷体;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

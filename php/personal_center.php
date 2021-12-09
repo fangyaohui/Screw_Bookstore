@@ -8,71 +8,48 @@
 </head>
 <body>
 <div>
-    <div class="blankhead">
-        <div class="n1_header">
-            <div class="n1_header_wrap">
-                <h1>
-                    <a href="index.php">
-                        <img class="img" src="../img/logo.png" alt="logo" title="螺钉书城" height="60" width="150">
-                    </a>
-                </h1>
-                <div class="n1_headerR">
-                    <ul class="n1_nav">
-                        <li ><a href="index.php"><b>首页</b></a></li>
-                        <li ><a href="classification.php"><b>分类</b></a></li>
-                        <li ><a href="rank.php"><b>排行</b></a></li>
-                        <li><a href="shopping_cart.php"><b>购物车</b></a></li>
-                        <li class="current"><a href="personal_center.php"><b>个人中心</b></a></li>
-                    </ul>
-                    <div class="n1_search">
-                        <form action="#" method="post" name="" id="">
-                            <input type="text" name="" placeholder="书名/作者名" autocomplete="off">
-                            <input type="submit" value="搜索" height="10px" src="../img/find.png">
-                        </form>
-                        <ul class="list" id="search_suggestion_box" style="display: none;"></ul>
-                    </div>
-                    <div class="n1_login">
-                        <?php
-                        include 'common/library/User.php';
-                        session_start();
-                        $user = unserialize($_SESSION['user']);
-                        if(empty($user)){
-                            echo '<a href="../view/login.html"><span class="n1_login_beffor" id="unlogin_box" style="display: block;">登录</span></a>';
-                        }else {
-                            $username = $user->getUUsername();
-                            echo '<select class="n1_login_affer" id="login_box" style="display: block;" onchange="window.location=this.value;">
-                        <option value="http://www.baidu.com">' . $username.'</option>
-                        <option value="http://www.baidu.com">个人中心</option>
-                        <option value="http://www.baidu.com">充值</option>
-                        <option value="login_out.php">退出登录</option>
-                    </select>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+        require_once 'common/top.php';
+    ?>
+    <?php
+    require_once 'common/top.php';
+    require_once 'common/function.php';
+    require_once 'common/library/Db.php';
+    session_start();
+    $user = unserialize($_SESSION['user']);
+    if(empty($user)){
+        echo alert("您还未登录，点击确定前往登录","../view/login.html");
+        return ;
+    }
+    $u_id = $user->getUId();
+    $db = Db::getInstance();
+    $sql = "select * from `users` where `u_id`={$u_id}";
+    $res = $db->read_one($sql);
+    $username = $res['u_username'];
+    ?>
     <div class="layout cf infor myBooks">
         <div class="inforLeft fl">
             <div class="inforLeftNav">
                 <div class="headImg">
-                    <img src="https://fs-uc-nearme-com-cn.oss-cn-hangzhou.aliyuncs.com/518/262/273/372262815.jpg">
+                    <img src="../img/readbook1.png">
                 </div>
-                <p class="account">151******22</p>
-                <p class="balance">余额：0阅饼					| 0代金券				</p>
+                <p class="account"><?php echo "{$username}";?></p>
+                <p class="balance">积分：0积分</p>
                 <ul>
                     <li>
-                        <a href="//www.ireader.com.cn/index.php?ca=User.Index&amp;pca=User.Index" class="inforOn">我的图书</a>
+                        <a href="" class="inforOn">我的图书</a>
                     </li>
                     <li>
-                        <a href="//ah2.ireader.com/zytc/public/index.php?ca=Svip.Order&amp;projectSource=zypc&amp;pca=User.Index">我的VIP</a>
+                        <a href="">充值</a>
                     </li>
                     <li>
-                        <a href="//www.ireader.com.cn/index.php?ca=Recharge_Index.Index&amp;pca=User.Index">充值</a>
+                        <a href="">充值记录</a>
                     </li>
                     <li>
-                        <a href="//www.ireader.com.cn/index.php?ca=Recharge.getRecord&amp;pca=User.Index">充值记录</a>
+                        <a href="index.php">首页</a>
+                    </li>
+                    <li>
+                        <a href="shopping_cart.php">购物车</a>
                     </li>
                 </ul>
             </div>
@@ -80,8 +57,7 @@
         <div class="inforRight fr">
             <div class="layout_h1">
                 <div class="tabHead">
-                    <span class="checkd aHspan" onclick="goUrl('book');">已购图书</span><em class="fl">|</em>
-                    <span onclick="goUrl('record');">消费记录</span>
+                    <span class="checkd aHspan">已购图书</span>
                 </div>
             </div>
             <div class="tabBox">
@@ -91,9 +67,22 @@
                         <!--已购图书结束-->
                         <div class="tabBox1">
                             <ul class="tabListBox1 cf dis">
-
+                                <?php
+                                    require_once 'common/library/User.php';
+                                    require_once 'common/library/Db.php';
+                                    $db = Db::getInstance();
+                                    $sql = "select * from `purchased` where `u_id`={$u_id}";
+                                    $res = $db->read_all($sql);
+                                    foreach ($res as $temp){
+                                        $b_id = $temp['b_id'];
+                                        $sql = "select * from `books` where `id`={$b_id}";
+                                        $book = $db->read_one($sql);
+                                        $img = $book['img'];
+                                        echo "<li style='padding: 13px 13px 10px 10px'><img src='.{$img}' alt='{$book['bookname']}' title='{$book['bookname']}'></li>";
+                                    }
+                                ?>
                             </ul>
-                            <p class="nobuyPro">您还没有购买过图书哦</p>
+<!--                            <p class="nobuyPro">您还没有购买过图书哦</p>-->
 
                         </div>
                         <!--已购图书结束-->

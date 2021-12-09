@@ -4,108 +4,7 @@
     <meta charset="UTF-8">
     <title>螺钉书城首页</title>
     <link href="../css/index.css" rel="stylesheet" type="text/css">
-    <style>
-        body{
-            overflow: hidden;
-            text-align: center;
-
-        }
-        .car{
-            width:65%;
-            border-radius: 18px;
-            margin-left: 300px;
-            padding: 30px 0 0 0 ;
-            margin: 0 auto;
-        }
-        .car .good{
-            background-color: #F88020;
-            height:55px;
-            font-size: 22px;
-            color:white;
-            line-height: 55px;
-            font-weight: 200;
-            border-radius: 18px 18px 0 0;
-            margin-bottom: 20px;
-
-        }
-        .car .good table{
-            width:100%;
-        }
-        .car .goods{
-            height:45px;
-            line-height: 45px;
-            font-size: 20px;
-            font-weight: 200;
-        }
-        .car .goods table{
-            width:100%;
-        }
-        .car .goods table .btn1{
-            width: 70px;
-            height:28px;
-            border: 2px solid #46B3E6;
-            background-color: white;
-            color: #46B3E6;
-            border-radius: 4px;
-            font-weight: 600;
-            transform: translateY(-3px);
-        }
-        .car .goods table button:hover{
-            background-color: #46B3E6;
-            color: white;
-        }
-        .car .goods1{
-            margin-top: 10px;
-
-            background-color: ;
-            height:50px;
-            font-size: 19px;
-            color:white;
-            line-height: 50px;
-            font-weight: 200;
-            border-radius:0 0 10px 10px ;
-        }
-        .car .goods2{
-            border-top: 1px solid #F88020;
-            margin-top: 10px;
-            height:50px;
-            font-size: 19px;
-            line-height: 50px;
-            font-weight: 200;
-            border-radius:0 0 10px 10px ;
-        }
-        .car .goods1 table{
-
-            width:100%;
-        }
-        .car .goods1 .btn2{
-            width: 70px;
-            height:28px;
-            border: 2px solid #21BF73;
-            background-color: white;
-            color: #21BF73;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .car .goods1 .btn2:hover{
-            color:white;
-            background-color: #21BF73;
-        }
-        .car .goods1 .btn3{
-            width: 80px;
-            height:30px;
-            border: 2px solid #FF0000;
-            background-color: white;
-            color: #FF0000;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .car .goods1 .btn3:hover{
-            color:white;
-            background-color:#FF0000 ;
-        }
-
-    </style>
+    <link href="../css/shopping_cart.css" rel="stylesheet" type="text/css">
     <script>
         function fang(){
             window.location = "order.php";
@@ -114,70 +13,67 @@
 </head>
 <body>
 <div>
-    <div class="blankhead">
-        <div class="n1_header">
-            <div class="n1_header_wrap">
-                <h1>
-                    <a href="index.php">
-                        <img class="img" src="../img/logo.png" alt="logo" title="螺钉书城" height="60" width="150">
-                    </a>
-                </h1>
-                <div class="n1_headerR">
-                    <ul class="n1_nav">
-                        <li ><a href="index.php"><b>首页</b></a></li>
-                        <li ><a href="classification.php"><b>分类</b></a></li>
-                        <li ><a href="rank.php"><b>排行</b></a></li>
-                        <li class="current"><a href="shopping_cart.php"><b>购物车</b></a></li>
-                        <li><a href="personal_center.php"><b>个人中心</b></a></li>
-                    </ul>
-                    <div class="n1_search">
-                        <form action="#" method="post" name="" id="">
-                            <input type="text" name="" placeholder="书名/作者名" autocomplete="off">
-                            <input type="submit" value="搜索" height="10px" src="../img/find.png">
-                        </form>
-                        <ul class="list" id="search_suggestion_box" style="display: none;"></ul>
-                    </div>
-                    <div class="n1_login">
-                        <?php
-                        include 'common/library/User.php';
-                        @session_start();
-                        $user = unserialize($_SESSION['user']);
-                        if(empty($user)){
-                            echo '<a href="../view/login.html"><span class="n1_login_beffor" id="unlogin_box" style="display: block;">登录</span></a>';
-                        }else {
-                            $username = $user->getUUsername();
-                            echo '<select class="n1_login_affer" id="login_box" style="display: block;" onchange="window.location=this.value;">
-                        <option value="http://www.baidu.com">' . $username.'</option>
-                        <option value="http://www.baidu.com">个人中心</option>
-                        <option value="http://www.baidu.com">充值</option>
-                        <option value="login_out.php">退出登录</option>
-                    </select>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+        require_once 'common/top.php';
+        require_once 'common/function.php';
+        session_start();
+        $user = unserialize($_SESSION['user']);
+        if(empty($user)){
+            echo alert("您还未登录，点击确定前往登录","../view/login.html");
+            return ;
+        }
+    ?>
+
     <div class="car">
         <div class="good">
-            <table><tr><td width=30%>商品名称</td><td width=20%>单价</td><td width=20%>数量</td><td width=30%>操作</td></tr></table>
+            <table><tr><td width=30%>图书名称</td><td width=20%>作者</td><td width=20%>价格</td><td width=30%>操作</td></tr></table>
         </div>
         <div class="goods">
-            <table><tr><td width=30%>旁氏洗发露</td><td width=20%>99</td><td width=20%>1</td><td width=30%><a><button class="btn1">删除</button></a></td></tr></table>
-        </div>
-        <div class="goods">
-            <table><tr><td width=30%>旁氏洗发露</td><td width=20%>99</td><td width=20%>1</td><td width=30%><a><button class="btn1">删除</button></a></td></tr></table>
+            <table>
+                <?php
+                    require_once 'common/library/Db.php';
+                    require_once 'del_shoppingbook.php';
+                    $u_id = $user->getUid();
+                    $db = Db::getInstance();
+                    $sql = "select * from shopping where u_id={$u_id}";
+                    $res = $db->read_all($sql);
+                    foreach ($res as $temp ){
+                        $sql = "select * from books where id={$temp['b_id']}";
+                        $data = $db->read_one($sql);
+                        $integral = $data['integral'];
+                        $bookname = $data['bookname'];
+                        $author = $data['author'];
+                        $bookid = $data['id'];
+                        echo "<tr><td width=30%><a href='book.php?bookid={$bookid}'>{$bookname}</a></td><td width=20%>{$author}</td><td width=20%>{$integral}</td>";
+                        echo "<td width=30%><a href='purchase.php?bookid={$bookid}'><button class='btn1' onclick=''>购买</button></a>";
+                        echo "&nbsp;<a href='del_shoppingbook.php?bookid={$bookid}'><button class='btn1' onclick=''>删除</button></a></td></tr>";
+                    }
+
+                ?>
+            </table>
         </div>
         <div class="goods2">
-            <table><tr><td width=560></td><td width=20%>小计：</td><td>总数：</td></tr></table>
+            <table>
+                <tr>
+                    <td width=560></td>
+                    <td width=20%></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
         <div class="goods1">
-            <table><tr><td width=50%><button class="btn2" onclick="fang()">提交订单</button></td><td><button class="btn3"">全部清空</button></td></tr></table>
+            <table>
+                <tr>
+                    <td width=50%>
+                        <button class="btn2" onclick="fang()">全部购买</button>
+                    </td>
+                    <td>
+                        <button class="btn3" onclick="">全部清空</button>
+                    </td>
+                </tr>
+            </table>
         </div>
-
     </div>
 </div>
-
 </body>
 </html>

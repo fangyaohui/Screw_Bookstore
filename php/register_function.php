@@ -41,21 +41,20 @@ if($captcha != $mail_captcha && $captcha!='1234'){
 }
 $db = Db::getInstance();
 $sql = "SELECT `*` FROM `users` WHERE `u_username` = '{$username}';";
-$data = $db->read_one($sql);
-if(isset($data)){
+$data = $db->read_one($sql)[0];
+if($data != null){
     echo alert("该用户已经被注册","register.php");
     return ;
 }
 
 // 开始进行用户注册
-$u_id = $db->insert_id();
+$u_id = $db->insert_id('users','u_id');
 $time = date('Y-m-d h:i:s',time());
 $sql = "insert into users values({$u_id},'{$username}','{$password}','','{$email}','','0','2','','{$time}','');";
 $res = $db->write($sql);
 if($res == 1){
     $_SESSION['tel'] = "";
     echo alert("注册成功，请尽快绑定电话号码进行激活，点击确定进行登录","../view/login.html");
-
 }else{
     echo alert("注册失败，请稍后进行注册","register.php");
 }
