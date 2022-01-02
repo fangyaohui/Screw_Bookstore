@@ -154,7 +154,9 @@
         </div>
     </div>
     <div class="v1_foot">
-        <div class="aboutcompany"></div>
+        <div class="aboutcompany">
+
+        </div>
     </div>
 </div>
 

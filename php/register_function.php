@@ -50,7 +50,7 @@ if($data != null){
 // 开始进行用户注册
 $u_id = $db->insert_id('users','u_id');
 $time = date('Y-m-d h:i:s',time());
-$sql = "insert into users values({$u_id},'{$username}','{$password}','','{$email}','','0','2','','{$time}','');";
+$sql = "insert into users values({$u_id},'{$username}','{$password}','','{$email}','','2000','2','','{$time}','');";
 $res = $db->write($sql);
 if($res == 1){
     $_SESSION['tel'] = "";
